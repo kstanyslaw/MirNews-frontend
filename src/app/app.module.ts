@@ -9,12 +9,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 import { HomepageModule } from './homepage/homepage.module';
 import { NewspageModule } from './newspage/newspage.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
