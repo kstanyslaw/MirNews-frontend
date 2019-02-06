@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomepageService } from './homepage.service';
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private homepageService: HomepageService) { }
 
   ngOnInit() {
+    console.log(this.homepageService.getNewsList());
   }
 
 }
