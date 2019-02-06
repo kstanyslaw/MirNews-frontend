@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomepageComponent } from './homepage.component';
 import { HomepageService } from "./homepage.service";
+import { NewslistComponent } from './newslist/newslist.component';
 
 @NgModule({
   declarations: [
-    HomepageComponent
+    HomepageComponent,
+    NewslistComponent
   ],
   imports: [
     CommonModule
@@ -14,7 +16,8 @@ import { HomepageService } from "./homepage.service";
     HomepageService
   ],
   exports: [
-    HomepageComponent
+    HomepageComponent,
+    NewslistComponent
   ]
 })
 export class HomepageModule { }
