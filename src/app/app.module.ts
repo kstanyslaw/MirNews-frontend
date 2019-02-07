@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 import { HomepageModule } from './homepage/homepage.module';
 import { NewspageModule } from './newspage/newspage.module';
-import { FooterComponent } from './footer/footer.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     HomepageModule,
-    NewspageModule
+    NewspageModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
