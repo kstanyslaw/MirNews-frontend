@@ -1,25 +1,25 @@
 <h3>Add news</h3>
-<form>
+<form [formGroup]="newsForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label class="col-form-label-lg" for="formGroupExampleInput">Title</label>
-    <input type="text" class="form-control form-control-lg" placeholder="Title">
+    <input type="text" class="form-control form-control-lg" placeholder="Title" formControlName="title">
   </div>
 
   <div class="form-group">
     <label for="formGroupExampleInput">Author</label>
-    <input type="text" class="form-control" placeholder="Author">
+    <input type="text" class="form-control" placeholder="Author" formControlName="author">
   </div>
 
   <div class="form-group">
     <label for="formGroupExampleInput">Date</label>
-    <input type="datetime-local" class="form-control" placeholder="Date">
+    <input type="datetime-local" class="form-control" placeholder="Date" formControlName="date">
   </div>
 
   <div class="mb-3">
     <label for="validationTextarea">Article</label>
-    <textarea class="form-control" placeholder="Article" id="article" required></textarea>
+    <textarea class="form-control" placeholder="Article" id="article" formControlName="article" required></textarea>
   </div>
 
   <button type="button" class="btn btn-secondary">Cancel</button>
-  <button type="button" class="btn btn-success">Add news</button>
+  <button type="button" class="btn btn-success" type="submit">Add news</button>
 </form>

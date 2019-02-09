@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
 
 import { DashboardComponent } from './dashboard.component';
 import { AddNewsComponent } from './add-news/add-news.component';
@@ -12,7 +14,10 @@ import { DashboardService } from './dashboard.service';
     AddNewsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     DashboardService
