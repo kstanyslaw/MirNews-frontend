@@ -11,11 +11,6 @@ export class HeaderComponent implements OnInit {
   isShow: boolean = false;
 
   constructor(public translate: TranslateService) {
-    translate.addLangs(['en', 'ru']);
-    translate.setDefaultLang('en');
-
-    const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|ru/) ? browserLang : 'en');
   }
 
   getCountryFlag(language: string) {
