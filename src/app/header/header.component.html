@@ -1,14 +1,17 @@
 <header class="blog-header py-3">
     <div class="row flex-nowrap justify-content-between align-items-center">
         <div class="col-4 pt-1">
-            <!-- <a class="text-muted" href="#">Subscribe</a> -->
-            <p class="text-muted"> {{ 'header.language' | translate}}
-                <select #langSelect class="form-control" name="language select" id="langSelect" (change)="translate.use(langSelect.value)">
-                    <option *ngFor="let language of translate.getLangs()" [value]="language" [selected]="language === translate.currentLang">
-                        <span class="flag-icon flag-icon-us"></span>{{ language }}
-                    </option>
-                </select>
-            </p>
+                <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" (click)="isShow = !isShow" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="flag-icon" [ngClass]="getCountryFlag(translate.currentLang)" ></span> {{ translate.currentLang }}
+                        </button>
+                        <div class="dropdown-menu" [ngClass]="{'show': isShow}" aria-labelledby="dropdownMenuButton">
+                            <a *ngFor="let language of translate.getLangs()" class="dropdown-item" (click)="useLanguage(language)">
+                              <span class="flag-icon" [ngClass]="getCountryFlag(language)"></span> {{ language }}
+                            </a>
+                        </div>
+                </div>
+
         </div>
         <div class="col-4 text-center">
             <a class="blog-header-logo text-dark" href="#">MirNews</a>
