@@ -7,3 +7,20 @@
     font-family: "Playfair Display", Georgia, "Times New Roman", serif;
     font-size: 2.25rem;
 }
+
+.dropdown-toggle {
+    border-color: #e6e6e6;
+    color: #6c757d!important;
+}
+
+.dropdown-toggle::after {
+    color: #e6e6e6;
+}
+
+.dropdown-item {
+    color: #6c757d!important;
+}
+
+.dropdown-item:hover {
+    background-color: #e6e6e6;
+}

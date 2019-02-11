@@ -1,0 +1,10 @@
+{
+    "header": {
+        "language": "Язык: "
+    },
+    "footer": {
+        "features": "Функции",
+        "resources": "Ресурсы",
+        "about": "О нас"
+    }
+}
