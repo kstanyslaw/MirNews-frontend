@@ -23,7 +23,14 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.homepageService.getNewsList());
+    this.homepageService.getNewsList().subscribe(
+      data => {
+        console.log(data);
+        this.homepageService.newsList = data;
+      }
+    );
+
+      console.log(new Date('2019-02-09T04:11:00.000Z'));
   }
 
 }

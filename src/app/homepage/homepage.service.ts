@@ -2,39 +2,23 @@ import { Injectable } from '@angular/core';
 
 import { News } from "../models/news";
 import { Body } from '../models/single-language-news-body';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class HomepageService {
 
   newsList: News[] = [];
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   getNewsList() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
 
-    const testBody = [
-      new Body(
-        'ru',
-        'Тестовый заголовок',
-        'Тестовая статья'
-      ),
-      new Body(
-        'en',
-        'Test title',
-        'Test article'
-      )
-    ]
-
-    const testNews = new News(
-      null,
-      'test Author',
-      new Date('2019-02-07 02:17:20.000'),
-      testBody
-    );
-
-    console.log(testNews.body.find(x => x.language === 'ru').title);
-
-    this.newsList.push(testNews);
-    return this.newsList;
+    return this.httpClient.get('http://localhost:3000/news', httpOptions);
   }
+
 }
