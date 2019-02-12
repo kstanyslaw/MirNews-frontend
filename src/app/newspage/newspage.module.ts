@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { NewspageService } from './newspage.service';
+
 import { NewspageComponent } from './newspage.component';
 import { TitleComponent } from './title/title.component';
 import { ArticleComponent } from './article/article.component';
@@ -18,6 +21,9 @@ import { DateComponent } from './date/date.component';
   ],
   imports: [
     CommonModule
+  ],
+  providers: [
+    NewspageService
   ],
   exports: [
     NewspageComponent,

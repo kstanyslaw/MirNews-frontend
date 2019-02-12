@@ -1,5 +1,11 @@
-<app-title></app-title>
+<!-- <app-title></app-title>
 <app-author></app-author>
 <app-date></app-date>
-<app-article></app-article>
-<app-related-news></app-related-news>
+<app-article></app-article> -->
+
+<h3> {{ getBody(news.body).title }} </h3>
+<p> {{ news.author }} </p>
+<p> {{ news.date }} </p>
+<p> {{ getBody(news.body).article }} </p>
+
+<app-related-news></app-related-news> 
