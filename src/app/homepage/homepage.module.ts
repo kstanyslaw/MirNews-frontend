@@ -9,6 +9,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { HomepageComponent } from './homepage.component';
 import { HomepageService } from "./homepage.service";
 import { NewslistComponent } from './newslist/newslist.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NewslistComponent } from './newslist/newslist.component';
   ],
   imports: [
     CommonModule,
+    AppRoutingModule,
 
     // configure the imports
     HttpClientModule,
