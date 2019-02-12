@@ -6,5 +6,8 @@
         "features": "Features",
         "resources": "Resources",
         "about": "About"
+    },
+    "homepage": {
+        "continueReading": "Continue reading..."
     }
 }
