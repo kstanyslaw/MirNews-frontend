@@ -6,5 +6,8 @@
         "features": "Функции",
         "resources": "Ресурсы",
         "about": "О нас"
+    },
+    "homepage": {
+        "continueReading": "Продолжить чтение..."
     }
 }

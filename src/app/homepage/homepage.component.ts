@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
 import { HomepageService } from './homepage.service';
+import { TranslateService } from '@ngx-translate/core';
+
+import { Body } from '../models/single-language-news-body';
 
 @Component({
   selector: 'app-homepage',
@@ -8,7 +12,15 @@ import { HomepageService } from './homepage.service';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor(private homepageService: HomepageService) { }
+  constructor(private homepageService: HomepageService, private translate: TranslateService) { }
+
+  getTitle(newsBody: Body[]) {
+    return newsBody.find(x => x.language === this.translate.currentLang).title;
+  }
+
+  getBody(newsBody: Body[]) {
+    return newsBody.find(x => x.language === this.translate.currentLang);
+  }
 
   ngOnInit() {
     console.log(this.homepageService.getNewsList());
