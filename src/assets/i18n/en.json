@@ -5,7 +5,13 @@
     "footer": {
         "features": "Features",
         "resources": "Resources",
-        "about": "About"
+        "info": "Info",
+        "about": "About",
+        "contacts": "Contacts",
+        "legals": "Legal info",
+        "jobs": "Jobs",
+        "reportNews": "Report news",
+        "reportMistake": "Report about mistake"
     },
     "homepage": {
         "continueReading": "Continue reading..."
