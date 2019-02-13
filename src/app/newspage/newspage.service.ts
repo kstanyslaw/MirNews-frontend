@@ -10,8 +10,6 @@ export class NewspageService {
   constructor(private httpClient: HttpClient) { }
 
   getNewsById(id: string) {
-    console.log(id);
-
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
