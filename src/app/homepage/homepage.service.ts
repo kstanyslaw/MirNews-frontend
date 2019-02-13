@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class HomepageService {
 
-  newsList: News[] = [];
+  public newsList: News[] = [];
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,8 +17,6 @@ export class HomepageService {
         'Content-Type': 'application/json'
       })
     }
-
-    return this.httpClient.get('http://localhost:3000/news', httpOptions);
+    return this.httpClient.get<News[]>('http://localhost:3000/news', httpOptions);
   }
-
 }

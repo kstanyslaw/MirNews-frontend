@@ -6,15 +6,24 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
-import { HomepageComponent } from './homepage.component';
-import { HomepageService } from "./homepage.service";
-import { NewslistComponent } from './newslist/newslist.component';
 import { AppRoutingModule } from '../app-routing.module';
+
+import { HomepageService } from "./homepage.service";
+
+import { HomepageComponent } from './homepage.component';
+import { NewslistComponent } from './newslist/newslist.component';
+import { JumbotronComponent } from './jumbotron/jumbotron.component';
+import { PopularComponent } from './popular/popular.component';
+import { RightsidebarComponent } from '../rightsidebar/rightsidebar.component';
+
 
 @NgModule({
   declarations: [
     HomepageComponent,
-    NewslistComponent
+    NewslistComponent,
+    JumbotronComponent,
+    RightsidebarComponent,
+    PopularComponent,
   ],
   imports: [
     CommonModule,
@@ -35,7 +44,9 @@ import { AppRoutingModule } from '../app-routing.module';
   ],
   exports: [
     HomepageComponent,
-    NewslistComponent
+    NewslistComponent,
+    JumbotronComponent,
+    RightsidebarComponent
   ]
 })
 export class HomepageModule { }

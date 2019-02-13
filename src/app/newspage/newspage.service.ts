@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { News } from '../models/news';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,6 @@ export class NewspageService {
       })
     }
 
-    return this.httpClient.get('http://localhost:3000/news/' + id, httpOptions);
+    return this.httpClient.get<News>('http://localhost:3000/news/' + id, httpOptions);
   }
 }
