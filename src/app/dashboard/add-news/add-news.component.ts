@@ -14,18 +14,18 @@ export class AddNewsComponent implements OnInit {
 
   constructor(private dasboardService: DashboardService) { }
 
-  onSubmit() {
-    const news = new News(
-      null,
-      this.newsForm.value.title,
-      this.newsForm.value.author,
-      this.newsForm.value.date,
-      this.newsForm.value.article,
-      this.newsForm.value.category
-    )
-    this.dasboardService.addNews(news).subscribe();
-    this.newsForm.reset();
-  }
+  // onSubmit() {
+  //   const news = new News(
+  //     null,
+  //     this.newsForm.value.title,
+  //     this.newsForm.value.author,
+  //     this.newsForm.value.date,
+  //     this.newsForm.value.article,
+  //     this.newsForm.value.category
+  //   )
+  //   this.dasboardService.addNews(news).subscribe();
+  //   this.newsForm.reset();
+  // }
 
   ngOnInit() {
     this.newsForm = new FormGroup({

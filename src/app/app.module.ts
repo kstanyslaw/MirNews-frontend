@@ -16,13 +16,15 @@ import { FooterComponent } from './footer/footer.component';
 import { HomepageModule } from './homepage/homepage.module';
 import { NewspageModule } from './newspage/newspage.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+// import { RightsidebarComponent } from './rightsidebar/rightsidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    // RightsidebarComponent
   ],
   imports: [
     BrowserModule,
