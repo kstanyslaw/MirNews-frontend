@@ -5,7 +5,13 @@
     "footer": {
         "features": "Функции",
         "resources": "Ресурсы",
-        "about": "О нас"
+        "info": "Инфо",
+        "about": "О нас",
+        "contacts": "Контакты",
+        "legals": "Правовая информация",
+        "jobs": "Вакансии",
+        "reportNews": "Сообщить новость",
+        "reportMistake": "Сообщить об ошибке"
     },
     "homepage": {
         "continueReading": "Продолжить чтение..."
