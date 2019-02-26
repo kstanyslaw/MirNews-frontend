@@ -16,6 +16,7 @@ import { HomepageModule } from './homepage/homepage.module';
 import { NewspageModule } from './newspage/newspage.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { NavbarModule } from './navbar/navbar.module';
+import { NewslistRequestPageModule } from './newslist-request-page/newslist-request-page.module';
 // import { RightsidebarComponent } from './rightsidebar/rightsidebar.component';
 
 @NgModule({
@@ -43,7 +44,8 @@ import { NavbarModule } from './navbar/navbar.module';
     HomepageModule,
     NewspageModule,
     DashboardModule,
-    NavbarModule
+    NavbarModule,
+    NewslistRequestPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
