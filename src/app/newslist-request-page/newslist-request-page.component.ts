@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-newslist-request-page',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewslistRequestPageComponent implements OnInit {
 
-  constructor() { }
+  currentPage: number;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.queryParams
+      .subscribe(params => {
+        console.log(params); // {order: "popular"}
+
+        this.currentPage = params.page;
+      });
   }
 
 }
