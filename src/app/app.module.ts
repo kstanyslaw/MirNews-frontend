@@ -10,19 +10,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './header/header.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { HomepageModule } from './homepage/homepage.module';
 import { NewspageModule } from './newspage/newspage.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { NavbarModule } from './navbar/navbar.module';
 // import { RightsidebarComponent } from './rightsidebar/rightsidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavbarComponent,
     FooterComponent,
     // RightsidebarComponent
   ],
@@ -43,7 +42,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     // apps modules
     HomepageModule,
     NewspageModule,
-    DashboardModule
+    DashboardModule,
+    NavbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
