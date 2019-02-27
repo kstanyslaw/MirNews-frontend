@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { RightsidebarModule } from '../rightsidebar/rightsidebar.module';
+
 import { NewspageComponent } from './newspage.component';
 import { TitleComponent } from './title/title.component';
 import { ArticleComponent } from './article/article.component';
 import { AuthorComponent } from './author/author.component';
 import { RelatedNewsComponent } from './related-news/related-news.component';
 import { DateComponent } from './date/date.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +21,8 @@ import { DateComponent } from './date/date.component';
     DateComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RightsidebarModule
   ],
   exports: [
     NewspageComponent,

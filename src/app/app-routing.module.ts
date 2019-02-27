@@ -4,13 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewspageComponent } from './newspage/newspage.component';
-import { NewslistRequestPageComponent } from './newslist-request-page/newslist-request-page.component';
+import { NewslistComponent } from './newslist/newslist.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomepageComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'news', component: NewslistRequestPageComponent },
+  { path: 'news', component: NewslistComponent },
   { path: ':id', component: NewspageComponent },
 ];
 

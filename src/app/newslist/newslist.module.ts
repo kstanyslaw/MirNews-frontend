@@ -1,31 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { AppRoutingModule } from '../app-routing.module';
+
+import { RightsidebarModule } from '../rightsidebar/rightsidebar.module';
+
 // import ngx-translate and the http loader
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
-import { AppRoutingModule } from '../app-routing.module';
+import { NewslistComponent } from './newslist.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
-import { HomepageService } from "./homepage.service";
-
-import { HomepageComponent } from './homepage.component';
-import { JumbotronComponent } from './jumbotron/jumbotron.component';
-import { PopularComponent } from './popular/popular.component';
-import { NewslistModule } from '../newslist/newslist.module';
-
+import { NewslistService } from './newslist.service';
 
 @NgModule({
   declarations: [
-    HomepageComponent,
-    JumbotronComponent,
-    PopularComponent,
+    NewslistComponent,
+    PaginationComponent,
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
-    NewslistModule,
+    RightsidebarModule,
 
     // configure the imports
     HttpClientModule,
@@ -37,15 +35,12 @@ import { NewslistModule } from '../newslist/newslist.module';
         }
     }),
   ],
-  providers:[
-    HomepageService
-  ],
+  providers: [NewslistService],
   exports: [
-    HomepageComponent,
-    JumbotronComponent,
+    NewslistComponent
   ]
 })
-export class HomepageModule { }
+export class NewslistModule { }
 
 // required for AOT compilation (translation code)
 export function HttpLoaderFactory(http: HttpClient) {

@@ -1,6 +1,14 @@
-<h3> {{ getBody(news.body).title }} </h3>
-<p> {{ news.author }} </p>
-<p> {{ news.date }} </p>
-<p> {{ getBody(news.body).article }} </p>
+<div class="row">
+    <div class="col-md-8">
+        <h3> {{ getBody(news.body).title }} </h3>
+        <p> {{ news.author }} </p>
+        <p> {{ news.date }} </p>
+        <p> {{ getBody(news.body).article }} </p>
+    </div>
 
-<app-related-news></app-related-news> 
+    <div class="col-md-4">
+        <app-rightsidebar></app-rightsidebar>
+    </div>
+</div>
+
+<app-related-news></app-related-news>

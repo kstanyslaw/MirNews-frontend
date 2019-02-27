@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HomepageService } from '../homepage.service';
-import { Body } from 'src/app/models/single-language-news-body';
+import { ActivatedRoute } from '@angular/router';
+import { NewslistService } from './newslist.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Body } from '../models/single-language-news-body';
 
 @Component({
   selector: 'app-newslist',
@@ -10,7 +11,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class NewslistComponent implements OnInit {
 
-  constructor(private homepageService: HomepageService, private translate: TranslateService) { }
+  currentPage: number;
+
+  constructor(private route: ActivatedRoute, private newslistService: NewslistService, private translate: TranslateService) { }
 
   getTitle(newsBody: Body[]) {
     return newsBody.find(x => x.language === this.translate.currentLang).title;
@@ -21,12 +24,13 @@ export class NewslistComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.homepageService.getNewsList().subscribe(
+
+    this.newslistService.getNewsList().subscribe(
       data => {
-        this.homepageService.newsList = data;
+        this.newslistService.newsList = data;
 
         // Make Articles only 20 words length
-        this.homepageService.newsList.forEach(news => {
+        this.newslistService.newsList.forEach(news => {
           news.body.forEach(body => {
             body.article = body.article.replace(/(([^\s]+\s\s*){20})(.*)/,"$1…");
             console.log(body.article.length)
@@ -34,6 +38,13 @@ export class NewslistComponent implements OnInit {
         });
       }
     );
+
+    this.route.queryParams
+      .subscribe(params => {
+        console.log(params); // {order: "popular"}
+
+        this.currentPage = params.page;
+      });
   }
 
 }
