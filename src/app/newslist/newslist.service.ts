@@ -6,7 +6,7 @@ import { News } from '../models/news';
 @Injectable({
   providedIn: 'root'
 })
-export class NewslistRequestPageService {
+export class NewslistService {
 
   pages: number[] = [1,2,3,4,5,6,7];
 

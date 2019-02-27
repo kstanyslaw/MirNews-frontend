@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NewslistRequestPageService } from '../newslist-request-page.service';
+import { NewslistService } from '../newslist.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,7 +13,7 @@ export class PaginationComponent implements OnInit {
 
   currentPage: number;
 
-  constructor(private newslistRequestPage: NewslistRequestPageService, private route: ActivatedRoute) { }
+  constructor(private newslist: NewslistService, private route: ActivatedRoute) { }
 
   getPreviousPage() {
     return (this.currentPage - 1);
@@ -24,7 +24,7 @@ export class PaginationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.pages = this.newslistRequestPage.getPagesCount();
+    this.pages = this.newslist.getPagesCount();
     this.route.queryParams
       .subscribe(params => {
         // console.log(params); // {order: "popular"}

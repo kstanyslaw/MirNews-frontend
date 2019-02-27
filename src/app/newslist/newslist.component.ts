@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-newslist-request-page',
-  templateUrl: './newslist-request-page.component.html',
-  styleUrls: ['./newslist-request-page.component.css']
+  selector: 'app-newslist',
+  templateUrl: './newslist.component.html',
+  styleUrls: ['./newslist.component.css']
 })
-export class NewslistRequestPageComponent implements OnInit {
+export class NewslistComponent implements OnInit {
 
   currentPage: number;
 

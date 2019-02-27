@@ -16,7 +16,7 @@ import { HomepageModule } from './homepage/homepage.module';
 import { NewspageModule } from './newspage/newspage.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { NavbarModule } from './navbar/navbar.module';
-import { NewslistRequestPageModule } from './newslist-request-page/newslist-request-page.module';
+import { NewslistModule } from './newslist/newslist.module';
 // import { RightsidebarComponent } from './rightsidebar/rightsidebar.component';
 
 @NgModule({
@@ -45,7 +45,7 @@ import { NewslistRequestPageModule } from './newslist-request-page/newslist-requ
     NewspageModule,
     DashboardModule,
     NavbarModule,
-    NewslistRequestPageModule
+    NewslistModule
   ],
   providers: [],
   bootstrap: [AppComponent]

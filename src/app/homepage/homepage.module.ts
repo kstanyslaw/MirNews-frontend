@@ -13,19 +13,19 @@ import { HomepageService } from "./homepage.service";
 import { HomepageComponent } from './homepage.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { PopularComponent } from './popular/popular.component';
-import { RightsidebarComponent } from '../rightsidebar/rightsidebar.component';
+import { NewslistModule } from '../newslist/newslist.module';
 
 
 @NgModule({
   declarations: [
     HomepageComponent,
     JumbotronComponent,
-    RightsidebarComponent,
     PopularComponent,
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
+    NewslistModule,
 
     // configure the imports
     HttpClientModule,
@@ -43,7 +43,6 @@ import { RightsidebarComponent } from '../rightsidebar/rightsidebar.component';
   exports: [
     HomepageComponent,
     JumbotronComponent,
-    RightsidebarComponent
   ]
 })
 export class HomepageModule { }
