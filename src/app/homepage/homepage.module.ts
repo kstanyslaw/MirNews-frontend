@@ -11,7 +11,6 @@ import { AppRoutingModule } from '../app-routing.module';
 import { HomepageService } from "./homepage.service";
 
 import { HomepageComponent } from './homepage.component';
-import { NewslistComponent } from './newslist/newslist.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { PopularComponent } from './popular/popular.component';
 import { RightsidebarComponent } from '../rightsidebar/rightsidebar.component';
@@ -20,7 +19,6 @@ import { RightsidebarComponent } from '../rightsidebar/rightsidebar.component';
 @NgModule({
   declarations: [
     HomepageComponent,
-    NewslistComponent,
     JumbotronComponent,
     RightsidebarComponent,
     PopularComponent,
@@ -44,7 +42,6 @@ import { RightsidebarComponent } from '../rightsidebar/rightsidebar.component';
   ],
   exports: [
     HomepageComponent,
-    NewslistComponent,
     JumbotronComponent,
     RightsidebarComponent
   ]
