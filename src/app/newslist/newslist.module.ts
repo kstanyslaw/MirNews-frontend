@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from '../app-routing.module';
 
+import { RightsidebarModule } from '../rightsidebar/rightsidebar.module';
+
 // import ngx-translate and the http loader
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -11,19 +13,17 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { NewslistComponent } from './newslist.component';
 import { PaginationComponent } from './pagination/pagination.component';
 
-import { RightsidebarComponent } from '../rightsidebar/rightsidebar.component';
-
 import { NewslistService } from './newslist.service';
 
 @NgModule({
   declarations: [
     NewslistComponent,
     PaginationComponent,
-    RightsidebarComponent
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
+    RightsidebarModule,
 
     // configure the imports
     HttpClientModule,
