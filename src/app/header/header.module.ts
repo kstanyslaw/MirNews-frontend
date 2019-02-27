@@ -8,11 +8,13 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from '../app-routing.module';
 import { SearchComponent } from './search/search.component';
+import { ChangeLanguageComponent } from './change-language/change-language.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    SearchComponent
+    SearchComponent,
+    ChangeLanguageComponent
   ],
   imports: [
     CommonModule,

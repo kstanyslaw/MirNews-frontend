@@ -1,0 +1,10 @@
+<div class="dropdown">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" (click)="isShow = !isShow" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="flag-icon" [ngClass]="getCountryFlag(translate.currentLang)" ></span> {{ translate.currentLang }}
+    </button>
+    <div class="dropdown-menu" [ngClass]="{'show': isShow}" aria-labelledby="dropdownMenuButton">
+        <a *ngFor="let language of translate.getLangs()" class="dropdown-item" (click)="useLanguage(language)">
+          <span class="flag-icon" [ngClass]="getCountryFlag(language)"></span> {{ language }}
+        </a>
+    </div>
+</div>
