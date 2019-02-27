@@ -9,9 +9,9 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
+import { HeaderModule } from './header/header.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { NewspageModule } from './newspage/newspage.module';
 import { DashboardModule } from './dashboard/dashboard.module';
@@ -22,7 +22,6 @@ import { NewslistRequestPageModule } from './newslist-request-page/newslist-requ
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     FooterComponent,
     // RightsidebarComponent
   ],
@@ -41,6 +40,7 @@ import { NewslistRequestPageModule } from './newslist-request-page/newslist-requ
     }),
 
     // apps modules
+    HeaderModule,
     HomepageModule,
     NewspageModule,
     DashboardModule,
