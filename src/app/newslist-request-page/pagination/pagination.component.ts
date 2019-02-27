@@ -16,17 +16,20 @@ export class PaginationComponent implements OnInit {
   constructor(private newslistRequestPage: NewslistRequestPageService, private route: ActivatedRoute) { }
 
   getPreviousPage() {
-    console.log (this.currentPage - 1);
     return (this.currentPage - 1);
+  }
+
+  getNextPage() {
+    return (this.currentPage + 1);
   }
 
   ngOnInit() {
     this.pages = this.newslistRequestPage.getPagesCount();
     this.route.queryParams
       .subscribe(params => {
-        console.log(params); // {order: "popular"}
+        // console.log(params); // {order: "popular"}
 
-        this.currentPage = params.page;
+        this.currentPage = +params.page;
       });
   }
 
