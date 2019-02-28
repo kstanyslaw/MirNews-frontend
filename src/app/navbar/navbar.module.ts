@@ -9,6 +9,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NavbarComponent } from './navbar.component';
 
 import { NavbarService } from './navbar.service';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NavbarService } from './navbar.service';
   ],
   imports: [
     CommonModule,
+    AppRoutingModule,
 
     // configure the imports
     HttpClientModule,

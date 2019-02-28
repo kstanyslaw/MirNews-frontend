@@ -1,5 +1,5 @@
 <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
-        <a class="p-2" *ngFor="let category of navbarService.categories" [ngStyle]="{'color': getStyle(category)}"> {{ translateCategory(category) }} </a>
+        <a class="p-2" *ngFor="let category of navbarService.categories" [ngStyle]="{'color': getStyle(category)}" [routerLink]="['/news']" [queryParams]="{ category: category.en }"> {{ translateCategory(category) }} </a>
     </nav>
 </div>
