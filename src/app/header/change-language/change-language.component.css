@@ -3,6 +3,10 @@
     color: #6c757d!important;
 }
 
+.dropdown-toggle:hover {
+    color: white!important;
+}
+
 .dropdown-toggle::after {
     color: #e6e6e6;
 }

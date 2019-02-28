@@ -10,6 +10,7 @@ import { AuthorComponent } from './author/author.component';
 import { RelatedNewsComponent } from './related-news/related-news.component';
 import { DateComponent } from './date/date.component';
 import { BreadcrumpComponent } from './breadcrump/breadcrump.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { BreadcrumpComponent } from './breadcrump/breadcrump.component';
   ],
   imports: [
     CommonModule,
-    RightsidebarModule
+    RightsidebarModule,
+    AppRoutingModule
   ],
   exports: [
     NewspageComponent,
