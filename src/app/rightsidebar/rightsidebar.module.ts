@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RightsidebarComponent } from './rightsidebar.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 @NgModule({
   declarations: [
-    RightsidebarComponent
+    RightsidebarComponent,
+    ArchiveComponent
   ],
   imports: [
     CommonModule
