@@ -9,6 +9,7 @@ import { ArticleComponent } from './article/article.component';
 import { AuthorComponent } from './author/author.component';
 import { RelatedNewsComponent } from './related-news/related-news.component';
 import { DateComponent } from './date/date.component';
+import { BreadcrumpComponent } from './breadcrump/breadcrump.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { DateComponent } from './date/date.component';
     ArticleComponent,
     RelatedNewsComponent,
     DateComponent,
+    BreadcrumpComponent,
   ],
   imports: [
     CommonModule,
