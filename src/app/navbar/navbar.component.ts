@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+
 import { NavbarService } from './navbar.service';
 
 @Component({
@@ -8,13 +10,18 @@ import { NavbarService } from './navbar.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private navbarService: NavbarService) { }
+  constructor(private navbarService: NavbarService, private translate: TranslateService) { }
 
   getStyle(category: any) {
     if (!category.color) {
       return '#6c757d';
     }
     return category.color;
+  }
+
+  translateCategory(category) {
+    const lang = this.translate.currentLang;
+    return category[lang];
   }
 
   ngOnInit() {

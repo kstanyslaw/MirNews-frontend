@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header.component';
+
+import { AppRoutingModule } from '../app-routing.module';
 
 // import ngx-translate and the http loader
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { AppRoutingModule } from '../app-routing.module';
+
+import { HeaderComponent } from './header.component';
 import { SearchComponent } from './search/search.component';
 import { ChangeLanguageComponent } from './change-language/change-language.component';
 
