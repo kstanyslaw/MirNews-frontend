@@ -17,12 +17,16 @@ import { NewspageModule } from './newspage/newspage.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { NavbarModule } from './navbar/navbar.module';
 import { NewslistModule } from './newslist/newslist.module';
+import { AboutUsComponent } from './footer/about-us/about-us.component';
+import { ContactsComponent } from './footer/contacts/contacts.component';
 // import { RightsidebarComponent } from './rightsidebar/rightsidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
+    AboutUsComponent,
+    ContactsComponent,
     // RightsidebarComponent
   ],
   imports: [
