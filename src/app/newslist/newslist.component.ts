@@ -33,7 +33,7 @@ export class NewslistComponent implements OnInit {
         this.newslistService.newsList.forEach(news => {
           news.body.forEach(body => {
             body.article = body.article.replace(/(([^\s]+\s\s*){20})(.*)/,"$1…");
-            console.log(body.article.length)
+            // console.log(body.article.length)
           });
         });
       }
