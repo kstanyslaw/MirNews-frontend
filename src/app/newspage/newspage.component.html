@@ -1,10 +1,11 @@
 <app-breadcrump></app-breadcrump>
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 mb-4">
         <h3> {{ getBody(news.body).title }} </h3>
         <p> {{ news.author }} </p>
         <p> {{ news.date }} </p>
-        <p> {{ getBody(news.body).article }} </p>
+        <!-- <p> {{ getBody(news.body).article }} </p> -->
+        <div [innerHTML]="getBody(news.body).article"> </div>
     </div>
 
     <div class="col-md-4">
