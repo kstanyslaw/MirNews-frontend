@@ -1,7 +1,23 @@
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
 
 .display-4 {
     font-size: 3rem;
+}
+
+.jumbotron {
+    background-image: url(http://www.rabstol.net/uploads/gallery/main/58/rabstol_net_planes_06.jpg);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+.bg-dark {
+    background-color: #343a407d!important;
 }
