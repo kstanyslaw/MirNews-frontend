@@ -3,7 +3,7 @@
     <div class="col-md-8 mb-4">
         <h3> {{ getBody(news.body).title }} </h3>
         <p> {{ news.author }} </p>
-        <p> {{ news.date }} </p>
+        <p> {{ news.date | date:'d.MM.yyyy H:mm' }} </p>
         <!-- <p> {{ getBody(news.body).article }} </p> -->
         <div [innerHTML]="getBody(news.body).article"> </div>
     </div>

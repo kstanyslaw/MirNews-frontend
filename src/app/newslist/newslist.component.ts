@@ -23,6 +23,10 @@ export class NewslistComponent implements OnInit {
     return newsBody.find(x => x.language === this.translate.currentLang);
   }
 
+  getDate(date: string) {
+    return new Date(date);
+  }
+
   ngOnInit() {
 
     this.newslistService.getNewsList().subscribe(
