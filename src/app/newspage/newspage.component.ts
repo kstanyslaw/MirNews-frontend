@@ -31,9 +31,9 @@ export class NewspageComponent implements OnInit {
     this.newspageService.getNewsById(grantId).subscribe(
       data => {
         this.news = data;
-        this.news.date = new Date(this.news.date);
+        this.news.date = new Date(this.news.date);   
       }
-    );   
+    );
   }
 
 }
