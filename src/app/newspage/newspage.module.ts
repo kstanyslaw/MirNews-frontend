@@ -11,6 +11,7 @@ import { RelatedNewsComponent } from './related-news/related-news.component';
 import { DateComponent } from './date/date.component';
 import { BreadcrumpComponent } from './breadcrump/breadcrump.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { DatepipeModule } from '../datepipe/datepipe.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AppRoutingModule } from '../app-routing.module';
   imports: [
     CommonModule,
     RightsidebarModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DatepipeModule
   ],
   exports: [
     NewspageComponent,

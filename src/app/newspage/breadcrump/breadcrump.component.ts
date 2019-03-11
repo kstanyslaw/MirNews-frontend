@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NewspageService } from '../newspage.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { NewspageService } from '../newspage.service';
   styleUrls: ['./breadcrump.component.css']
 })
 export class BreadcrumpComponent implements OnInit {
+
+  @Input() title;
 
   constructor() { }
 

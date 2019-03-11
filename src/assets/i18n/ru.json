@@ -15,5 +15,14 @@
     },
     "homepage": {
         "continueReading": "Продолжить чтение..."
+    },
+    "calendar": {
+        "week1day": "Пн",
+        "week2day": "Вт",
+        "week3day": "Ср",
+        "week4day": "Чт",
+        "week5day": "Пт",
+        "week6day": "Сб",
+        "week7day": "Вс"
     }
 }

@@ -11,7 +11,7 @@
                 <h3 class="mb-0">
                     <a class="text-dark" [routerLink]="['/', news._id]"> {{ getBody(news.body).title }} </a>
                 </h3>
-                <div class="mb-1 text-muted">{{ getDate(news.date) | date: 'medium' }}</div>
+                <div class="mb-1 text-muted">{{ getDate(news.date) | dateFormat: this.translate.currentLang }}</div>
                 <p class="card-text mb-auto">{{ getBody(news.body).article }}</p>
                 <a [routerLink]="['/', news._id]">{{ 'homepage.continueReading' | translate }}</a>
             </div>

@@ -1,17 +1,28 @@
 <div class="p-4">
-      <h4 class="font-italic">Archives</h4>
-      <ol class="list-unstyled mb-0">
-        <li><a href="#">March 2014</a></li>
-        <li><a href="#">February 2014</a></li>
-        <li><a href="#">January 2014</a></li>
-        <li><a href="#">December 2013</a></li>
-        <li><a href="#">November 2013</a></li>
-        <li><a href="#">October 2013</a></li>
-        <li><a href="#">September 2013</a></li>
-        <li><a href="#">August 2013</a></li>
-        <li><a href="#">July 2013</a></li>
-        <li><a href="#">June 2013</a></li>
-        <li><a href="#">May 2013</a></li>
-        <li><a href="#">April 2013</a></li>
-      </ol>
-    </div>
+    <h4 class="font-italic">Archives</h4>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th colspan="3" class="month-name"> {{ getMonthName(pickedDate) }} </th>
+                <th colspan="2"> {{ currentYear }} </th>
+                <th scope="col"></th>
+            </tr>
+            <tr>
+                <th scope="col"> {{ 'calendar.week1day' | translate }} </th>
+                <th scope="col"> {{ 'calendar.week2day' | translate }} </th>
+                <th scope="col"> {{ 'calendar.week3day' | translate }} </th>
+                <th scope="col"> {{ 'calendar.week4day' | translate }} </th>
+                <th scope="col"> {{ 'calendar.week5day' | translate }} </th>
+                <th scope="col"> {{ 'calendar.week6day' | translate }} </th>
+                <th scope="col"> {{ 'calendar.week7day' | translate }} </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let week of getMonthCalendar(pickedDate)">
+                <td scope="col" *ngFor="let day of week"> {{ day.date }} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
