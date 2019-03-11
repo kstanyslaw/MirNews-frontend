@@ -15,11 +15,13 @@ import { PaginationComponent } from './pagination/pagination.component';
 
 import { NewslistService } from './newslist.service';
 import { DatepipeModule } from '../datepipe/datepipe.module';
+import { NewscardComponent } from './newscard/newscard.component';
 
 @NgModule({
   declarations: [
     NewslistComponent,
     PaginationComponent,
+    NewscardComponent,
   ],
   imports: [
     CommonModule,

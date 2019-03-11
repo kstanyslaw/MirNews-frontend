@@ -15,18 +15,6 @@ export class NewslistComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private newslistService: NewslistService, private translate: TranslateService) { }
 
-  getTitle(newsBody: Body[]) {
-    return newsBody.find(x => x.language === this.translate.currentLang).title;
-  }
-
-  getBody(newsBody: Body[]) {
-    return newsBody.find(x => x.language === this.translate.currentLang);
-  }
-
-  getDate(date: string) {
-    return new Date(date);
-  }
-
   ngOnInit() {
 
     this.newslistService.getNewsList().subscribe(
@@ -37,7 +25,6 @@ export class NewslistComponent implements OnInit {
         this.newslistService.newsList.forEach(news => {
           news.body.forEach(body => {
             body.article = body.article.replace(/(([^\s]+\s\s*){20})(.*)/,"$1…");
-            // console.log(body.article.length)
           });
         });
       }
