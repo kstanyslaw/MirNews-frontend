@@ -14,7 +14,6 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderModule } from './header/header.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { NewspageModule } from './newspage/newspage.module';
-import { DashboardModule } from './dashboard/dashboard.module';
 import { NavbarModule } from './navbar/navbar.module';
 import { NewslistModule } from './newslist/newslist.module';
 import { AboutUsComponent } from './footer/about-us/about-us.component';
@@ -47,7 +46,6 @@ import { ContactsComponent } from './footer/contacts/contacts.component';
     HeaderModule,
     HomepageModule,
     NewspageModule,
-    DashboardModule,
     NavbarModule,
     NewslistModule
   ],
