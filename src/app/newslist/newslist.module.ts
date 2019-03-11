@@ -14,6 +14,7 @@ import { NewslistComponent } from './newslist.component';
 import { PaginationComponent } from './pagination/pagination.component';
 
 import { NewslistService } from './newslist.service';
+import { DatepipeModule } from '../datepipe/datepipe.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NewslistService } from './newslist.service';
     CommonModule,
     AppRoutingModule,
     RightsidebarModule,
+    DatepipeModule,
 
     // configure the imports
     HttpClientModule,
