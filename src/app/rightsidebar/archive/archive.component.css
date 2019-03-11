@@ -1,0 +1,8 @@
+tr,
+th {
+    text-align: center;
+}
+
+.month-name {
+    text-transform: capitalize;
+}
