@@ -15,5 +15,14 @@
     },
     "homepage": {
         "continueReading": "Continue reading..."
+    },
+    "calendar": {
+        "week1day": "Sun",
+        "week2day": "Mon",
+        "week3day": "Tue",
+        "week4day": "Wed",
+        "week5day": "Thu",
+        "week6day": "Fri",
+        "week7day": "Sat"
     }
 }
