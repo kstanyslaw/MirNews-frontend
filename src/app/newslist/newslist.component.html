@@ -8,8 +8,12 @@
         <div *ngFor="let news of this.newslistService.newsList">
             <app-newscard [news]="news"></app-newscard>
         </div>
+
+        <!-- Pagination -->
         <app-pagination></app-pagination>
     </div>
+
+    <!-- Rightside Bar -->
     <div class="col-md-4">
         <app-rightsidebar></app-rightsidebar>
     </div>
