@@ -2,9 +2,38 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
 
+tr, th {
     text-align: center;
 }
 
 .month-name {
     text-transform: capitalize;
+}
+
+.today {
+    border-style: dashed;
+    border-width: 1px;
+}
+
+.picked {
+    color: white!important;
+    background-color: #54585b!important;
+    border-style: none!important;
+    border-width: 0px!important;
+}
+
+/* weekend */
+.day.ru:nth-child(7), .day.en:nth-child(1) {
+    color: red;
+}
+
+.day.ru:nth-child(6), .day.en:nth-child(7) {
+    color: #54585b;
+}
+
+/* hover */
+
+.day.yesterday:hover{
+    background-color: #198bff;
+    color: white;
 }

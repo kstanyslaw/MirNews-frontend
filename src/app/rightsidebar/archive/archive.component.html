@@ -1,13 +1,19 @@
 <div class="p-4">
     <h4 class="font-italic">Archives</h4>
-    <table class="table table-sm">
+    <table class="table table-sm table-borderless mb-0">
         <thead>
             <tr>
                 <th scope="col"></th>
-                <th colspan="3" class="month-name"> {{ getMonthName(pickedDate) }} </th>
-                <th colspan="2"> {{ currentYear }} </th>
+                <th colspan="3" class="month-name" (click)="showMonthes = !showMonthes; showYears = false"> {{ getMonthName(pickedDate) }} </th>
+                <th colspan="3" (click)="showYears = !showYears; showMonthes = false"> {{ currentYear }} </th>
                 <th scope="col"></th>
             </tr>
+        </thead>
+    </table>
+
+        <!-- Calendar -->
+    <table class="table table-sm table-borderless">
+        <thead *ngIf="!showMonthes && !showYears">
             <tr>
                 <th scope="col"> {{ 'calendar.week1day' | translate }} </th>
                 <th scope="col"> {{ 'calendar.week2day' | translate }} </th>
@@ -19,9 +25,18 @@
 
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngIf="!showMonthes && !showYears">
             <tr *ngFor="let week of getMonthCalendar(pickedDate)">
-                <td scope="col" *ngFor="let day of week"> {{ day.date }} </td>
+                <td scope="col" *ngFor="let day of week" [ngClass]="[day.dayClass]" > {{ day.date }} </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Month picker -->
+    <table class="table table-sm table-borderless">
+        <tbody *ngIf="showMonthes && !showYears">
+            <tr *ngFor="let rows of monthesNumberArray">
+                <th colspan="2" class="month-name" (click)="onPickMonth(col)" *ngFor="let col of rows">{{ getMonthName(null, col) }}</th>
             </tr>
         </tbody>
     </table>
