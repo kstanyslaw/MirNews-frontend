@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { News } from "../models/news";
-import { Body } from '../models/single-language-news-body';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()

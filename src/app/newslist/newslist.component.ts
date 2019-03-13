@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NewslistService } from './newslist.service';
 import { TranslateService } from '@ngx-translate/core';
-import { Body } from '../models/single-language-news-body';
 
 @Component({
   selector: 'app-newslist',
@@ -20,20 +19,11 @@ export class NewslistComponent implements OnInit {
     this.newslistService.getNewsList().subscribe(
       data => {
         this.newslistService.newsList = data;
-
-        // Make Articles only 20 words length
-        this.newslistService.newsList.forEach(news => {
-          news.body.forEach(body => {
-            body.article = body.article.replace(/(([^\s]+\s\s*){20})(.*)/,"$1…");
-          });
-        });
       }
     );
 
     this.route.queryParams
       .subscribe(params => {
-        console.log(params); // {order: "popular"}
-
         this.currentPage = params.page;
       });
   }

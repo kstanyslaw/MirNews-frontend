@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NewslistService } from '../newslist.service';
-import { Body } from 'src/app/models/single-language-news-body';
 import { News } from 'src/app/models/news';
 
 @Component({
@@ -15,15 +14,12 @@ export class NewscardComponent implements OnInit {
 
   constructor(private newslistService: NewslistService, private translate: TranslateService) { }
 
-  getBody(newsBody: Body[]) {
-    return newsBody.find(x => x.language === this.translate.currentLang);
-  }
-
   getDate(date: string) {
     return new Date(date);
   }
 
   ngOnInit() {
+    console.log(this.news.preview[this.translate.currentLang]);
   }
 
 }
