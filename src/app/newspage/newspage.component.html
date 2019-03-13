@@ -1,10 +1,9 @@
-<app-breadcrump [title]="getBody(news.body).title"></app-breadcrump>
+<app-breadcrump [title]="news.title[this.translate.currentLang]"></app-breadcrump>
 <div class="row">
     <div class="col-md-8 mb-4">
-        <h3> {{ getBody(news.body).title }} </h3>
+        <h3> {{ news.title[this.translate.currentLang] }} </h3>
         <p><small> {{ news.author }} at {{ news.date | dateFormat: this.translate.currentLang }} </small></p>
-        <!-- <p> {{ getBody(news.body).article }} </p> -->
-        <div [innerHTML]="getBody(news.body).article"> </div>
+        <div [innerHTML]="news.article[this.translate.currentLang]"> </div>
     </div>
 
     <div class="col-md-4">
