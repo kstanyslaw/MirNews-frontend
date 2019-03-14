@@ -9,7 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PaginationComponent implements OnInit {
 
-  pages: number[];
+  pages: number;
+
+  pagesArray: number[];
 
   currentPage: number;
 
@@ -27,8 +29,6 @@ export class PaginationComponent implements OnInit {
     this.pages = this.newslist.getPagesCount();
     this.route.queryParams
       .subscribe(params => {
-        // console.log(params); // {order: "popular"}
-
         this.currentPage = +params.page;
       });
   }
