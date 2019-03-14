@@ -18,8 +18,12 @@ export class NewscardComponent implements OnInit {
     return new Date(date);
   }
 
+  getBackgroundImage() {
+    var url = 'url(' + this.news.preview.img + ')';
+    return { 'background-image': url }
+  }
+
   ngOnInit() {
-    console.log(this.news.preview[this.translate.currentLang]);
   }
 
 }

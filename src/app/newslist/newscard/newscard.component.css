@@ -8,5 +8,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 svg {
-    width: 35.24rem;
+    min-width: 14.24rem!important;
+    max-width: 14.24rem!important;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
