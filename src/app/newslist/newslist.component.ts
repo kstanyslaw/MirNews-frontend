@@ -16,15 +16,10 @@ export class NewslistComponent implements OnInit {
 
   ngOnInit() {
 
-    this.newslistService.getNewsList().subscribe(
-      data => {
-        this.newslistService.newsList = data;
-      }
-    );
-
     this.route.queryParams
       .subscribe(params => {
         this.currentPage = params.page;
+        this.newslistService.getNewsList(params).subscribe();
       });
   }
 

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { tap } from "rxjs/operators";
 
 import { News } from '../models/news';
 
@@ -8,7 +10,7 @@ import { News } from '../models/news';
 })
 export class NewslistService {
 
-  pages: number[] = [1,2,3,4,5,6,7];
+  pages: number;
 
   public newsList: News[] = [];
 
@@ -18,12 +20,28 @@ export class NewslistService {
     return this.pages;
   }
 
-  getNewsList() {
-    const httpOptions = {
-      headers: new HttpHeaders({
+  getNewsList(params?: any) {
+    const headers = new HttpHeaders({
         'Content-Type': 'application/json'
-      })
-    }
-    return this.httpClient.get<News[]>('http://localhost:3000/news', httpOptions);
+    })
+
+    return this.httpClient.get<Response>('http://localhost:3000/news', {headers: headers, params: params}).pipe(
+      tap(
+        data => {
+          this.newsList = data.docs;
+          this.pages = data.pages;
+        }
+      )
+    );
   }
+}
+
+class Response {
+  constructor(
+    public docs: Array<News>,
+    public total: number,
+    public limit: number,
+    public page: number,
+    public pages: number
+  ) {}
 }
