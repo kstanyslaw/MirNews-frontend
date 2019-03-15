@@ -4,7 +4,7 @@
     <h3 class="mb-0">
       <a class="text-dark" [routerLink]="['/', news._id]"> {{ news.title[this.translate.currentLang] }} </a>
     </h3>
-    <div class="mb-1 text-muted">{{ getDate(news.date) | dateFormat: this.translate.currentLang }}</div>
+    <div class="mb-1 text-muted"><small>{{ news.author }} {{ news.date | dateFormat: this.translate.currentLang }}</small></div>
     <p class="card-text mb-auto">{{ news.preview[this.translate.currentLang] }}</p>
     <a [routerLink]="['/', news._id]">{{ 'homepage.continueReading' | translate }}</a>
   </div>

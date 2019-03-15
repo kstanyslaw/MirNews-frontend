@@ -14,9 +14,9 @@ export class NewscardComponent implements OnInit {
 
   constructor(private newslistService: NewslistService, private translate: TranslateService) { }
 
-  getDate(date: string) {
-    return new Date(date);
-  }
+  // getDate(date: string) {
+  //   return new Date(date);
+  // }
 
   getBackgroundImage() {
     var url = 'url(' + this.news.preview.img + ')';

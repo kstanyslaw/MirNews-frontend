@@ -25,8 +25,7 @@ export class NewspageComponent implements OnInit {
     const grantId = this.route.snapshot.paramMap.get('id');
     this.newspageService.getNewsById(grantId).subscribe(
       data => {
-        this.news = data;
-        this.news.date = new Date(this.news.date);   
+        this.news = data; 
       }
     );
   }
