@@ -13,10 +13,10 @@ export class NavbarComponent implements OnInit {
   constructor(private navbarService: NavbarService, private translate: TranslateService) { }
 
   getStyle(category: any) {
-    if (!category.color) {
+    if (!category.navColor) {
       return '#6c757d';
     }
-    return category.color;
+    return category.navColor;
   }
 
   translateCategory(category) {
@@ -25,6 +25,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.navbarService.getCategories().subscribe();
   }
 
 }

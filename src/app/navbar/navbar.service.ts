@@ -1,62 +1,26 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { tap } from "rxjs/operators";
+import { Category } from '../models/category';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NavbarService {
 
-  categories = [
-    {
-      ru: "Универсиада2019",
-      en: "Universiade2019",
-      color: 'red'
-    },
-    {
-      ru: "Политика",
-      en: "Politics",
-    },
-    {
-      ru: "Общество",
-      en: "Society",
-    },
-    {
-      ru: "Бизнес",
-      en: "Busines",
-    },
-    {
-      ru: "Культура",
-      en: "Culture",
-    },
-    {
-      ru: "Наука",
-      en: "Science",
-    },
-    {
-      ru: "Технологии",
-      en: "Technology",
-    },
-    {
-      ru: "Здоровье",
-      en: "Health",
-    },
-    {
-      ru: "Путешествия",
-      en: "Travel",
-    },
-    {
-      ru: "Стиль",
-      en: "Style",
-    },
-    {
-      ru: "Дизайн",
-      en: "Design",
-    },
-    {
-      ru: "ЧерноеНебо",
-      en: "BlackSkyKRSK",
-      color: 'black'
-    }
-  ]
+  categories: Category[];
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) {}
+
+  getCategories() {
+    const httpOptions = new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    const params = new HttpParams().set('component', 'navbar')
+    return this.httpClient.get<Category[]>('http://localhost:3000/category', {headers: httpOptions, params: params}).pipe(
+      tap(
+        data => this.categories = data
+      )
+    )
+  }
 }
