@@ -12,6 +12,8 @@ export class NewslistComponent implements OnInit {
 
   currentPage: number;
 
+  pages: number;
+
   constructor(private route: ActivatedRoute, private newslistService: NewslistService, private translate: TranslateService) { }
 
   ngOnInit() {
@@ -19,7 +21,11 @@ export class NewslistComponent implements OnInit {
     this.route.queryParams
       .subscribe(params => {
         this.currentPage = params.page;
-        this.newslistService.getNewsList(params).subscribe();
+        this.newslistService.getNewsList(params).subscribe(
+          data => {
+            this.pages = data.pages;
+          }
+        );
       });
   }
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { tap } from "rxjs/operators";
+import { tap } from 'rxjs/operators';
 
 import { News } from '../models/news';
 
@@ -23,7 +23,7 @@ export class NewslistService {
   getNewsList(params?: any) {
     const headers = new HttpHeaders({
         'Content-Type': 'application/json'
-    })
+    });
 
     return this.httpClient.get<Response>('http://localhost:3000/news', {headers: headers, params: params}).pipe(
       tap(
