@@ -7,6 +7,7 @@ import { ArchiveComponent } from './archive/archive.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 
     // configure the imports
     HttpClientModule,
+    AppRoutingModule,
     TranslateModule.forRoot({
         loader: {
             provide: TranslateLoader,

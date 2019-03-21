@@ -44,6 +44,8 @@ export class ArchiveComponent implements OnInit {
 
     const firstMonthDay = new Date(new Date(date).setDate(1));
     const lastMonthDay = new Date(new Date(date).setMonth(date.getMonth() + 1, 0));
+    const pickedMonth = date.getMonth();
+    const pickedYear = date.getFullYear();
     const offset = (this.translate.currentLang === 'en'
       ? firstMonthDay.getDay()
       : (firstMonthDay.getDay()) === 0
@@ -67,7 +69,7 @@ export class ArchiveComponent implements OnInit {
         } else {
           var tempDate = new Day(
             (i + j + 1 - offset).toString(),
-            '',
+            pickedYear + '-' + pickedMonth + '-' + (i + j + 1 - offset).toString(),
             'day ' + this.translate.currentLang,
             true
           );
@@ -108,7 +110,7 @@ export class ArchiveComponent implements OnInit {
 class Day {
   constructor(
     public date: string,
-    url: string,
+    public query: string,
     public dayClass: string,
     public isDisable: boolean
   ) { }

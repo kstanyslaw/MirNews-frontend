@@ -27,7 +27,7 @@
         </thead>
         <tbody *ngIf="!showMonthes && !showYears">
             <tr *ngFor="let week of getMonthCalendar(pickedDate)">
-                <td scope="col" *ngFor="let day of week" [ngClass]="[day.dayClass]" > {{ day.date }} </td>
+                <td scope="col" *ngFor="let day of week" [ngClass]="[day.dayClass]" [routerLink]="['/news']" [queryParams]="{ 'archives': day.query }" queryParamsHandling="merge" > {{ day.date }} </td>
             </tr>
         </tbody>
     </table>
