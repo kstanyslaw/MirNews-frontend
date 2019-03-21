@@ -11,9 +11,9 @@ export class PaginationComponent implements OnInit {
 
   @Input() pages: number;
 
-  pagesArray: any[];
+  @Input() currentPage: number;
 
-  currentPage: number;
+  pagesArray: any[];
 
   constructor(private newslist: NewslistService, private route: ActivatedRoute) { }
 
@@ -22,34 +22,72 @@ export class PaginationComponent implements OnInit {
     if (this.pages) {
       if (this.pages <= 7) {
         for (let i = 0; i < this.pages; i++) {
-          this.pagesArray[i] = i + 1;
+          this.pagesArray[i] = new Page(i + 1, {page: i + 1}, {});
         }
       } else {
-        if((this.currentPage - 1) < 3) {
-          this.pagesArray[0] = 1;
-          this.pagesArray[1] = 2;
-          this.pagesArray[2] = 3;
-          this.pagesArray.push('...');
-          this.pagesArray.push(this.pages);
-        } else if((this.pages - this.currentPage) < 3) {
-          this.pagesArray[0] = 1;
-          this.pagesArray[1] = '...';
-          this.pagesArray[2] = this.pages - 3;
-          this.pagesArray[3] = this.pages - 2;
-          this.pagesArray[4] = this.pages - 1;
-          this.pagesArray[5] = this.pages;
+        if(this.currentPage === 1) {
+          this.pagesArray[0] = new Page(1, {page: 1}, {});
+          this.pagesArray[1] = new Page(2, {page: 2}, {});
+          this.pagesArray[2] = new Page(3, {page: 3}, {});
+        } else if (this.currentPage === this.pages) {
+          this.pagesArray[0] = new Page(this.pages - 2, {page: this.pages - 2}, {});
+          this.pagesArray[1] = new Page(this.pages - 1, {page: this.pages - 1}, {});
+          this.pagesArray[2] = new Page(this.pages, {page: this.pages}, {});
         } else {
-          this.pagesArray[0] = 1;
-          this.pagesArray[1] = '...';
-          this.pagesArray[2] = this.currentPage - 1;
-          this.pagesArray[3] = this.currentPage;
-          this.pagesArray[4] = this.currentPage + 1;
-          this.pagesArray[5] = '...';
-          this.pagesArray[6] = this.pages;
+          this.pagesArray[0] = new Page(this.currentPage - 1, {page: this.currentPage - 1}, {});
+          this.pagesArray[1] = new Page(this.currentPage, {page: this.currentPage}, {});
+          this.pagesArray[2] = new Page(this.currentPage + 1, {page: this.currentPage + 1}, {});
         }
-      }      
-    }
+    
+        // Offsets
+          // Before
+        if(this.currentPage === 2 || this.currentPage === 1) {
+    
+        } else if(this.currentPage === 3) {
+          this.pagesArray.unshift(new Page(1, {page: 1}, {}));
+        } else {
+          this.pagesArray.unshift(new Page('...', {page: this.currentPage - 2}, {}));
+          this.pagesArray.unshift(new Page(1, {page: 1}, {}));
+        }
+    
+          // After
+        if(this.currentPage === this.pages - 1 || this.currentPage === this.pages) {
+    
+        } else if(this.currentPage === this.pages - 2) {
+          this.pagesArray.push(new Page(this.pages, {page: this.pages}, {}));
+        } else {
+          this.pagesArray.push(new Page('...', {page: this.currentPage + 2}, {}));
+          this.pagesArray.push(new Page(this.pages, {page: this.pages}, {}));
+        }
+      }
+    }   
+
     return this.pagesArray;
+  }
+
+  getPage(number: any, parameter?: string) {
+    var page = new Page(
+      number,
+      { page: number }
+    )
+
+    switch (parameter) {
+      case 'before':
+        page.query = {page: this.currentPage - 2};
+        break;
+      
+      case 'after':
+        page.query = {page: this.currentPage + 2};
+        break;
+
+      case 'current':
+        page.style = { 'pointer-events': 'none', 'cursor': 'default', 'color': 'white', 'background-color': '#007bff'}
+
+      default:
+        break;
+    }
+
+    return page;
   }
 
   getPreviousPage() {
@@ -61,10 +99,14 @@ export class PaginationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.queryParams
-      .subscribe(params => {
-        this.currentPage = +params.page;
-      });
   }
 
+}
+
+class Page {
+  constructor(
+    public number: any,
+    public query: Object,
+    public style?: object
+  ) {}
 }

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs/operators';
 
 import { News } from '../models/news';
@@ -10,15 +9,9 @@ import { News } from '../models/news';
 })
 export class NewslistService {
 
-  pages: number;
-
   public newsList: News[] = [];
 
   constructor(private httpClient: HttpClient) { }
-
-  getPagesCount() {
-    return this.pages;
-  }
 
   getNewsList(params?: any) {
     const headers = new HttpHeaders({
@@ -29,7 +22,6 @@ export class NewslistService {
       tap(
         data => {
           this.newsList = data.docs;
-          this.pages = data.pages;
         }
       )
     );

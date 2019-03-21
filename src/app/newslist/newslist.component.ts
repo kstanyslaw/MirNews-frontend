@@ -24,6 +24,7 @@ export class NewslistComponent implements OnInit {
         this.newslistService.getNewsList(params).subscribe(
           data => {
             this.pages = data.pages;
+            this.currentPage = +data.page;
           }
         );
       });

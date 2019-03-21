@@ -6,7 +6,7 @@
         <span aria-hidden="true">&laquo;</span>
       </a>
     </li>
-    <li class="page-item" *ngFor="let page of getPagesArray()"><a class="page-link" [routerLink]="['/news']" [queryParams]="{ page: page }" queryParamsHandling="merge"> {{ page }} </a></li>
+    <li class="page-item" *ngFor="let page of getPagesArray()"><a class="page-link" [routerLink]="['/news']" [queryParams]="page.query" queryParamsHandling="merge"> {{ page.number }} </a></li>
     <li class="page-item" >
       <a class="page-link" [routerLink]="['/news']" [queryParams]="{ page: getNextPage() }" queryParamsHandling="merge" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
