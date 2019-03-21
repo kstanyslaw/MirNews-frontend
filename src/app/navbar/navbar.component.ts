@@ -10,7 +10,7 @@ import { NavbarService } from './navbar.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private navbarService: NavbarService, private translate: TranslateService) { }
+  constructor(public navbarService: NavbarService, private translate: TranslateService) { }
 
   getStyle(category: any) {
     if (!category.navColor) {

@@ -18,7 +18,7 @@ export class NewspageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private newspageService: NewspageService,
-    private translate: TranslateService
+    public translate: TranslateService
     ) { }
 
   ngOnInit() {

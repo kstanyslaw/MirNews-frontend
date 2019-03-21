@@ -14,7 +14,7 @@ export class NewslistComponent implements OnInit {
 
   pages: number;
 
-  constructor(private route: ActivatedRoute, private newslistService: NewslistService, private translate: TranslateService) { }
+  constructor(private route: ActivatedRoute, public newslistService: NewslistService, private translate: TranslateService) { }
 
   ngOnInit() {
 

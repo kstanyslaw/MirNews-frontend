@@ -12,7 +12,7 @@ export class NewscardComponent implements OnInit {
 
   @Input() news: News;
 
-  constructor(private newslistService: NewslistService, private translate: TranslateService) { }
+  constructor(private newslistService: NewslistService, public translate: TranslateService) { }
 
   // getDate(date: string) {
   //   return new Date(date);
