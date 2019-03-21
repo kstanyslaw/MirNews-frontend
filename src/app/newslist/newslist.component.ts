@@ -17,7 +17,6 @@ export class NewslistComponent implements OnInit {
   constructor(private route: ActivatedRoute, public newslistService: NewslistService, private translate: TranslateService) { }
 
   ngOnInit() {
-
     this.route.queryParams
       .subscribe(params => {
         this.currentPage = params.page;

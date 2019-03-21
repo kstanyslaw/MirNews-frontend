@@ -10,7 +10,7 @@
         </div>
 
         <!-- Pagination -->
-        <app-pagination *ngIf="pages || pages === 1" [pages]="pages" [currentPage]="currentPage"></app-pagination>
+        <app-pagination *ngIf="pages && pages !== 1" [pages]="pages" [currentPage]="currentPage"></app-pagination>
     </div>
 
     <!-- Rightside Bar -->
