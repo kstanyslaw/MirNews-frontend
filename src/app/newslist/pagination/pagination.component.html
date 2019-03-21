@@ -1,14 +1,14 @@
 <!-- Pagination Example -->
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center">
-    <li class="page-item" *ngIf="(currentPage.page !== 1)" >
+    <li class="page-item" *ngIf="(currentPage !== 1)" >
       <a class="page-link" [routerLink]="['/news']" [queryParams]="{ page: getPreviousPage() }" aria-label="Previous" queryParamsHandling="merge">
         <span aria-hidden="true">&laquo;</span>
       </a>
     </li>
-    <li class="page-item" *ngFor="let page of getPagesArray()"><a class="page-link" [routerLink]="['/news']" [queryParams]="page.query" queryParamsHandling="merge"> {{ page.number }} </a></li>
+    <li class="page-item" *ngFor="let page of getPagesArray()"><a class="page-link" [routerLink]="['/news']" [queryParams]="page.query" queryParamsHandling="merge" [ngStyle]="page.style"> {{ page.number }} </a></li>
     <li class="page-item" >
-      <a class="page-link" [routerLink]="['/news']" [queryParams]="{ page: getNextPage() }" queryParamsHandling="merge" aria-label="Next">
+      <a class="page-link" *ngIf="(currentPage !== pages)" [routerLink]="['/news']" [queryParams]="{ page: getNextPage() }" queryParamsHandling="merge" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
       </a>
     </li>
