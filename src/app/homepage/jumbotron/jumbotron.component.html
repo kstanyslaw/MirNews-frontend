@@ -1,7 +1,25 @@
-<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="#" class="text-white font-weight-bold"> {{ 'homepage.continueReading' | translate }} </a></p>
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark carousel slide" [ngStyle]="getBackgroundImg()">
+  
+    <div class="col-md-6 px-0" *ngFor="let slide of slides">
+      <div  *ngIf="slide.isActive">
+        <h1 class="display-4 font-italic"> {{ slide.news.title[translate.currentLang] }} </h1>
+        <p class="lead my-3"> {{ slide.news.preview[translate.currentLang] }} </p>
+        <p class="lead mb-1"><a class="text-white font-weight-bold"> {{ 'homepage.continueReading' | translate }} </a></p>
+      </div>
     </div>
+
+    <!-- Carousel Indicators -->
+    <ol class="carousel-indicators">
+        <li *ngFor="let slide of slides; let i=index" [ngClass]="{'active': slide.isActive}" (click)="changeActiveSlide(i)"></li>
+    </ol>
+
+    <!-- Carousel Buttons -->
+    <a class="carousel-control-prev" role="button" (click)="prevSlide()">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" role="button" (click)="nextSlide()">
+        <span class="carousel-control-next-icon"></span>
+        <span class="sr-only">Next</span>
+    </a>
   </div>
