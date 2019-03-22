@@ -22,7 +22,7 @@ export class PaginationComponent implements OnInit {
     if (this.pages) {
       if (this.pages <= 7) {
         for (let i = 0; i < this.pages; i++) {
-          this.pagesArray[i] = new Page(i + 1, {page: i + 1}, {});
+          this.pagesArray[i] = this.getPage(i + 1, i + 1 === this.currentPage ? 'current' : null);
         }
       } else {
         if(this.currentPage === 1) {
