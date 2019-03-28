@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { catchError } from 'rxjs/operators';
+
 import { News } from '../models/news';
-// import { tap } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,7 @@ export class NewspageService {
 
   news: News;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   getNewsById(id: string) {
     const httpOptions = {
@@ -20,9 +22,12 @@ export class NewspageService {
     }
 
     return this.httpClient.get<News>('http://localhost:3000/news/' + id, httpOptions)
-    // .pipe(
-    //   tap(
-    //     data => this.news = data
-    //   ))
+    .pipe(
+      catchError(error => {
+        if (error.status === 404) {
+          this.router.navigate(['./about_us'])
+        }
+      })
+      )
   }
 }
