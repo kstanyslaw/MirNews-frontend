@@ -8,8 +8,11 @@ image: node:lts-alpine
 pipelines:
   default:
     - step:
-        caches:
-          - node
-        script: # Modify the commands below to build your repository.
-          - npm install
-          - npm test
+            script:
+              - npm install
+              - npm install express --save
+              - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD
+              - docker build -t kstanyslaw/snnews:bitbucket .
+              - docker push kstanyslaw/snnews:bitbucket
+            services:
+              - docker
